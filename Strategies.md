@@ -5,4 +5,5 @@
 
 ## Web services
 ### Tomcat
-- マネージャにログインしてみる: /manager
+- Webコンテナ，サーブレットコンテナ．簡易的にWebサーバの機能も兼ねる
+- マネージャにログインしてみる: /manager/html
