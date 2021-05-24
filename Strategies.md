@@ -10,5 +10,7 @@
   - [Tomcatのアーキテクチャ概要と各コンポーネントの役割について - Rainbow Engine](https://rainbow-engine.com/architecture-of-tomcat/)
 - マネージャにログインしてみる: /manager/html
   - Basic認証がある場合、hydra等でパスワードクラック
+    - `hydra -C ~/tools/wordlists/SecLists/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt http-post://$IP:8080/manager/html`
   - マネージャでは、サーバのOS情報の閲覧やWARファイルのデプロイが可能
   - WARファイルをアップロードできれば悪意のあるコードを実行できる
+    - warファイルは展開可能で、アップロード後に対象パスに移動すれば任意コード実行が可能
