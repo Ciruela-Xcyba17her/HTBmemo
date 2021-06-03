@@ -1,0 +1,91 @@
+Starting Nmap 7.60 ( https://nmap.org ) at 2021-06-03 14:10 JST
+NSE: Loaded 142 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 14:10
+NSE Timing: About 50.00% done; ETC: 14:11 (0:00:31 remaining)
+Completed NSE at 14:10, 34.01s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 14:10
+Completed NSE at 14:10, 0.00s elapsed
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Initiating Parallel DNS resolution of 1 host. at 14:10
+Completed Parallel DNS resolution of 1 host. at 14:10, 0.02s elapsed
+DNS resolution of 1 IPs took 0.02s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating Connect Scan at 14:10
+Scanning 10.10.10.68 [1 port]
+Discovered open port 80/tcp on 10.10.10.68
+Completed Connect Scan at 14:10, 0.26s elapsed (1 total ports)
+Initiating Service scan at 14:10
+Scanning 1 service on 10.10.10.68
+Completed Service scan at 14:10, 6.54s elapsed (1 service on 1 host)
+NSE: Script scanning 10.10.10.68.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 14:10
+NSE: [firewall-bypass 10.10.10.68] lacks privileges.
+NSE: [tls-ticketbleed 10.10.10.68:80] Not running due to lack of privileges.
+NSE Timing: About 97.30% done; ETC: 14:11 (0:00:01 remaining)
+NSE Timing: About 97.97% done; ETC: 14:11 (0:00:01 remaining)
+NSE Timing: About 97.97% done; ETC: 14:12 (0:00:02 remaining)
+NSE Timing: About 97.97% done; ETC: 14:12 (0:00:03 remaining)
+NSE Timing: About 97.97% done; ETC: 14:13 (0:00:03 remaining)
+NSE Timing: About 97.97% done; ETC: 14:13 (0:00:04 remaining)
+NSE Timing: About 97.97% done; ETC: 14:14 (0:00:04 remaining)
+NSE Timing: About 97.97% done; ETC: 14:14 (0:00:05 remaining)
+NSE Timing: About 97.97% done; ETC: 14:15 (0:00:06 remaining)
+NSE Timing: About 97.97% done; ETC: 14:15 (0:00:06 remaining)
+Completed NSE at 14:15, 312.19s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 14:15
+Completed NSE at 14:15, 3.15s elapsed
+Nmap scan report for 10.10.10.68
+Host is up, received user-set (0.26s latency).
+Scanned at 2021-06-03 14:10:36 JST for 322s
+
+PORT   STATE SERVICE REASON  VERSION
+80/tcp open  http    syn-ack Apache httpd 2.4.18 ((Ubuntu))
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /dev/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /images/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /js/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /php/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|_  /uploads/: Potentially interesting folder
+| http-internal-ip-disclosure: 
+|_  Internal IP Leaked: 127.0.1.1
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 14:15
+Completed NSE at 14:15, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 14:15
+Completed NSE at 14:15, 0.00s elapsed
+Read data files from: /snap/rustscan/28/usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 356.53 seconds
