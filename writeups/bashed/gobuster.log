@@ -1,0 +1,22 @@
+=====================================================
+Gobuster v2.0.1              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.10.68/
+[+] Threads      : 50
+[+] Wordlist     : /home/ciruela/tools/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Timeout      : 10s
+=====================================================
+2021/06/03 22:35:07 Starting gobuster
+=====================================================
+/images (Status: 301)
+/uploads (Status: 301)
+/php (Status: 301)
+/css (Status: 301)
+/dev (Status: 301)
+/js (Status: 301)
+/fonts (Status: 301)
+=====================================================
+2021/06/03 22:43:26 Finished
+=====================================================
