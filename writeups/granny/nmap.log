@@ -1,0 +1,14 @@
+PORT   STATE SERVICE REASON  VERSION
+80/tcp open  http    syn-ack Microsoft IIS httpd 6.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD DELETE COPY MOVE PROPFIND PROPPATCH SEARCH MKCOL LOCK UNLOCK PUT POST
+|_  Potentially risky methods: TRACE DELETE COPY MOVE PROPFIND PROPPATCH SEARCH MKCOL LOCK UNLOCK PUT
+|_http-server-header: Microsoft-IIS/6.0
+|_http-title: Under Construction
+| http-webdav-scan: 
+|   Allowed Methods: OPTIONS, TRACE, GET, HEAD, DELETE, COPY, MOVE, PROPFIND, PROPPATCH, SEARCH, MKCOL, LOCK, UNLOCK
+|   WebDAV type: Unkown
+|   Server Type: Microsoft-IIS/6.0
+|   Public Options: OPTIONS, TRACE, GET, HEAD, DELETE, PUT, POST, COPY, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK, SEARCH
+|_  Server Date: Thu, 03 Jun 2021 02:25:04 GMT
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
