@@ -1,0 +1,104 @@
+230 User logged in.
+Remote system type is Windows_NT.
+ftp> dir -a
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+11-20-16  10:46PM       <DIR>          $RECYCLE.BIN
+02-03-19  12:18AM                 1024 .rnd
+11-20-16  09:59PM               389408 bootmgr
+07-16-16  09:10AM                    1 BOOTNXT
+02-03-19  08:05AM       <DIR>          Documents and Settings
+02-25-19  10:15PM       <DIR>          inetpub
+06-02-21  09:20AM            738197504 pagefile.sys
+07-16-16  09:18AM       <DIR>          PerfLogs
+02-25-19  10:56PM       <DIR>          Program Files
+02-03-19  12:28AM       <DIR>          Program Files (x86)
+02-25-19  10:56PM       <DIR>          ProgramData
+02-03-19  08:05AM       <DIR>          Recovery
+02-03-19  08:04AM       <DIR>          System Volume Information
+02-03-19  08:08AM       <DIR>          Users
+02-25-19  11:49PM       <DIR>          Windows
+226 Transfer complete.
+ftp> cd "Program Files"
+250 CWD command successful.
+ftp> dir -a
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+02-25-19  10:56PM       <DIR>          Common Files
+07-16-16  09:16AM                  174 desktop.ini
+07-16-16  09:18AM       <DIR>          internet explorer
+11-20-16  10:16PM       <DIR>          Uninstall Information
+02-25-19  10:56PM       <DIR>          VMware
+11-20-16  09:53PM       <DIR>          Windows Defender
+07-16-16  09:18AM       <DIR>          WindowsApps
+07-16-16  09:18AM       <DIR>          WindowsPowerShell
+02-03-19  12:18AM       <DIR>          WinPcap
+226 Transfer complete.
+ftp> cd "../Program Files (x86)"
+250 CWD command successful.
+ftp> dir -a
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+07-16-16  09:18AM       <DIR>          Common Files
+07-16-16  09:16AM                  174 desktop.ini
+07-16-16  09:18AM       <DIR>          internet explorer
+07-16-16  09:18AM       <DIR>          Microsoft.NET
+06-02-21  09:20AM       <DIR>          PRTG Network Monitor
+02-03-19  12:28AM       <DIR>          Uninstall Information
+11-20-16  09:53PM       <DIR>          Windows Defender
+07-16-16  09:18AM       <DIR>          WindowsPowerShell
+226 Transfer complete.
+ftp> cd "/ProgramData"
+250 CWD command successful.
+ftp> dir -a
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+02-03-19  08:05AM       <DIR>          Application Data
+02-03-19  08:05AM       <DIR>          Desktop
+02-03-19  08:05AM       <DIR>          Documents
+02-03-19  12:15AM       <DIR>          Licenses
+11-20-16  10:36PM       <DIR>          Microsoft
+02-03-19  12:18AM       <DIR>          Paessler
+02-03-19  08:05AM       <DIR>          regid.1991-06.com.microsoft
+07-16-16  09:18AM       <DIR>          SoftwareDistribution
+02-03-19  08:05AM       <DIR>          Start Menu
+02-03-19  12:15AM       <DIR>          TEMP
+02-03-19  08:05AM       <DIR>          Templates
+11-20-16  10:19PM       <DIR>          USOPrivate
+11-20-16  10:19PM       <DIR>          USOShared
+02-25-19  10:56PM       <DIR>          VMware
+226 Transfer complete.
+ftp> cd Paessler
+250 CWD command successful.
+ftp> dir -a
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+06-02-21  09:14PM       <DIR>          PRTG Network Monitor
+226 Transfer complete.
+ftp> cd "PRTG Network Monitor"
+250 CWD command successful.
+ftp> dir -a
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+06-02-21  10:02AM       <DIR>          Configuration Auto-Backups
+06-02-21  08:00PM       <DIR>          Log Database
+02-03-19  12:18AM       <DIR>          Logs (Debug)
+02-03-19  12:18AM       <DIR>          Logs (Sensors)
+02-03-19  12:18AM       <DIR>          Logs (System)
+06-02-21  09:21AM       <DIR>          Logs (Web Server)
+06-02-21  08:01PM       <DIR>          Monitoring Database
+02-25-19  10:54PM              1189697 PRTG Configuration.dat
+02-25-19  10:54PM              1189697 PRTG Configuration.old
+07-14-18  03:13AM              1153755 PRTG Configuration.old.bak
+06-02-21  09:14PM              1717398 PRTG Graph Data Cache.dat
+02-25-19  11:00PM       <DIR>          Report PDFs
+02-03-19  12:18AM       <DIR>          System Information Database
+02-03-19  12:40AM       <DIR>          Ticket Database
+02-03-19  12:18AM       <DIR>          ToDo Database
+226 Transfer complete.
+ftp> get "PRTG Configuration.old.bak"
+local: PRTG Configuration.old.bak remote: PRTG Configuration.old.bak
+200 PORT command successful.
+125 Data connection already open; Transfer starting.
+226 Transfer complete.
+1153755 bytes received in 8.49 secs (132.6431 kB/s)
