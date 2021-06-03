@@ -1,24 +1,29 @@
 # Cheat Sheet
 
 
-## Portscan
-
+## Enumeration
 ### nmap
 - 全ポートスキャン: `nmap -sS -A -T4 -Pn -p- $IP`
-- 特定ポートのチェック: `sudo nmap -sS -A -p[port] --script vuln $IP`
+- 特定ポートのチェック: `nmap -sS -A -p[port] --script vuln $IP`
 
 ### rustscan
 - installation: `sudo snap install -y rustscan`
-- 全ポートスキャン: `rustscan -a $IP -- -Pn -A`
+- 全ポートスキャン: `rustscan -a $IP --ulimit 20000 -- -Pn -A --script vuln > rustscan.log`
+
+### gobuster
+- ディレクトリ
+  - 
 
 ## Password Cracking
-
 ### hydra
-- webサービスで総当たりする，
+- webサービスで総当たりする
 - Basic認証総当たり(`user:pass`形式のコーパス): `hydra -C ~/tools/wordlists/SecLists/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt http-post://$IP:8080/manager/html`
 
 
 ## Exploitation
+### Webshell
+- web上でコマンド実行できる
+- https://www.hackingdream.net/2020/02/reverse-shell-cheat-sheet-for-penetration-testing-oscp.html
 
 ### msfvenom
 - metasploitのペイロードを取れる
@@ -58,7 +63,6 @@
 
 
 ## Reverse shells
-
 ### SimpleHTTPserver
 - カレントディレクトリをルートとした簡易Webサーバを立てることができる．
   - ```sudo python -m SimpleHTTPServer [port]```
