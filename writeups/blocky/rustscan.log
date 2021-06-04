@@ -1,0 +1,64 @@
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack ProFTPD 1.3.5a
+|_sslv2-drown: 
+22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    syn-ack Apache httpd 2.4.18 ((Ubuntu))
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.10.37
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.10.37:80/
+|     Form id: search-form-60b9b1cd819d3
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/index.php/category/uncategorized/
+|     Form id: search-form-60b9b1d358c24
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/index.php/2017/07/
+|     Form id: search-form-60b9b1d5c78c5
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/#icon-search
+|     Form id: search-form-60b9b1cd819d3
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/#icon-arrow-right
+|     Form id: search-form-60b9b1cd819d3
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/#content
+|     Form id: search-form-60b9b1cd819d3
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/
+|     Form id: search-form-60b9b1cd819d3
+|     Form action: http://10.10.10.37/
+|     
+|     Path: http://10.10.10.37/wp-login.php
+|     Form id: loginform
+|     Form action: http://10.10.10.37/wp-login.php
+|     
+|     Path: http://10.10.10.37/index.php/category/uncategorized/\"#icon-quote-right\"
+|     Form id: search-form-60b9b1e108519
+|_    Form action: http://10.10.10.37/
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /wiki/: Wiki
+|   /wp-login.php: Possible admin folder
+|   /phpmyadmin/: phpMyAdmin
+|   /wp-login.php: Wordpress login page.
+|_  /readme.html: Interesting, a readme.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://10.10.10.37/wp-includes/js/jquery/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.10.37/wp-includes/js/jquery/?C=N%3bO%3dD%27%20OR%20sqlspider
+|     http://10.10.10.37/wp-includes/js/jquery/?C=D%3bO%3dA%27%20OR%20sqlspider
+|_    http://10.10.10.37/wp-includes/js/jquery/?C=S%3bO%3dA%27%20OR%20sqlspider
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-wordpress-users: 
+| Username found: notch
+|_Search stopped at ID #25. Increase the upper limit if necessary with 'http-wordpress-users.limit'
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
